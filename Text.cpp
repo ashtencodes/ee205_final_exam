@@ -27,7 +27,7 @@ void Text::printText() {
         }
         std::cout << std::endl; //endl after iterating
     } else {
-        std::cout << "List is empty!" << std::endl;
+        std::cout << "No letters" << std::endl;
     }
 }
 
