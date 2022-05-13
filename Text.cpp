@@ -21,7 +21,7 @@ void Text::pushNewLetter( char newLetter ) {
 }
 
 void Text::printText() {
-    if( head != nullptr ){
+    if( head != nullptr ){ //checking if list is emtpy
         for( Letter* currentLetter = head; currentLetter != nullptr; currentLetter = currentLetter->next ){
             std::cout << currentLetter->value; //iterating through and printing chars
         }
