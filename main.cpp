@@ -1,6 +1,6 @@
 #include <iostream>
+
 #include "Text.h"
-#include "Letter.h"
 
 int main() {
     std::cout << "Hello, World!" << std::endl;

@@ -13,26 +13,26 @@
 #include <iostream>
 
 void Text::pushNewLetter( char newLetter ) {
-    Letter* newLetterNode = new( Letter );
-    newLetterNode->value = newLetter;
+    Letter* newLetterNode = new( Letter ); //creating new letter object and pointer
+    newLetterNode->value = newLetter; //setting value of letter object
 
-    newLetterNode->next = head;
+    newLetterNode->next = head; //adding to linkedlist
     head = newLetterNode;
 }
 
 void Text::printText() {
     if( head != nullptr ){
         for( Letter* currentLetter = head; currentLetter != nullptr; currentLetter = currentLetter->next ){
-            std::cout << currentLetter->value;
+            std::cout << currentLetter->value; //iterating through and printing chars
         }
-        std::cout << std::endl;
+        std::cout << std::endl; //endl after iterating
     } else {
         std::cout << "List is empty!" << std::endl;
     }
 }
 
 void Text::reverseText() {
-    if( head == nullptr || head->next == nullptr ){ //Checking for if list is 1 or none elements
+    if( head == nullptr || head->next == nullptr ){  //Checking for if list is 1 or none elements
         std::cout << "Nothing happened, list is 1 or less elements." << std::endl;
     } else {
         Letter* currentLetter = head;
