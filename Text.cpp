@@ -18,18 +18,36 @@ void Text::pushNewLetter( char newLetter ) {
 
     newLetterNode->next = head;
     head = newLetterNode;
-    std::cout << "ADDING" << std::endl;
 }
 
 void Text::printText() {
-    std::cout << "PRINTING" << std::endl;
     if( head != nullptr ){
-        for( Letter* currentLetter; currentLetter != nullptr; currentLetter = currentLetter->next ){
+        for( Letter* currentLetter = head; currentLetter != nullptr; currentLetter = currentLetter->next ){
             std::cout << currentLetter->value;
         }
+        std::cout << std::endl;
+    } else {
+        std::cout << "List is empty!" << std::endl;
     }
 }
 
 void Text::reverseText() {
+    if( head == nullptr || head->next == nullptr ){ //Checking for if list is 1 or none elements
+        std::cout << "Nothing happened, list is 1 or less elements." << std::endl;
+    } else {
+        Letter* currentLetter = head;
+        Letter* lastLetter = nullptr;
+        Letter* nextLetter;
 
+        while (currentLetter != nullptr) {
+            nextLetter = currentLetter->next; // storing next letter
+            currentLetter->next = lastLetter; // point current from next to previous letter
+            lastLetter = currentLetter; // setting new farthest end
+            currentLetter = nextLetter; // repeating from stored next letter
+        }
+        head = lastLetter;
+    }
 }
+
+//                        L       C
+//nullptr <- O  <- O  <-  O   nullptr

@@ -15,5 +15,9 @@ int main() {
 
     text.printText();  // tac
 
+    text.reverseText();
+
+    text.printText();  // cat
+
     return 0;
 }
